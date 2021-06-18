@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class=" row">
+            <h1>El autor es {{autores.first_name}} , {{autores.last_name}} </h1>
+            <h3>ID: {{autores.id}} </h3>
+            <h3>Notas</h3>
+            <p>{{autores.notas}}</p>
+            <h3>Libros</h3>
+
+            {% for libro in books %}
+            <li><em>{{libro.title}}</em></li>
+            {% endfor %}
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <br>
+                <label>Ingresar Libro:</label>
+                <select name="libroNuevo">
+                    {% for libro in todos_libros %}
+                        <option value="{{libro.id}}">{{libro.title}}</option>
+                    {% endfor %}
+                </select>
+                <br><br>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
+</body>
+
+</html>

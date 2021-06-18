@@ -1,0 +1,11 @@
+body{
+    background:linear-gradient(90deg, rgba(160, 85, 85, 0.869) 20%, rgba(248, 247, 247, 0.472) 50%), url(../images/fondo.jpg);
+    height: 100vh;
+}
+
+
+#consolaData{
+
+background: rgb(214, 214, 228);
+background: linear-gradient(90deg, rgba(218, 218, 228, 0.869) 0%, rgba(238, 109, 109, 0.236) 0%);
+}
